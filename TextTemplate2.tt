@@ -1,0 +1,23 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+
+
+<#
+	string[] classNames = File.ReadAllLines(@"C:\Users\99450\Desktop\PROJECTS\VStudio\T4_TextTemplateDemo\TextTemplate\Models\Models.txt");
+	string directory = @"C:\Users\99450\Desktop\PROJECTS\VStudio\T4_TextTemplateDemo\TextTemplate\Models";
+	foreach (var name in classNames)
+	{#>
+
+//-------------------------------
+namespace TextTemplate
+{
+    internal class <#= name #>
+    {
+
+    }
+}
+	<#}#>
